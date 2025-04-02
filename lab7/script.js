@@ -9,18 +9,14 @@ window.addEventListener("keyup", function (e) {
   const currentText = container.textContent;
   console.log(e.key);
   if (e.key === 'Escape') {
-    // 清空字串
-    container.textContent = "";
+    container.textContent = "";// 清空字串
   } else if (e.key === 'Backspace') {
-    // 刪除最後一個字元
-    container.textContent = currentText.substring(0, currentText.length - 1);
+    container.textContent = currentText.substring(0, currentText.length - 1);// 刪除最後一個字元
   } else if (currentText.length > 0 && e.key === currentText[0]) {
-    // 若輸入字元與第一個字元相同，刪除第一個字元
-    container.textContent = currentText.slice(1);
+    container.textContent = currentText.slice(1); // 檢查輸入字元與第一個字元相同，刪除第一個字元
   } else if (/^[a-zA-Z]$/.test(e.key)) {
     container.textContent += e.key;
   }
-
   // 每次操作後隨機新增字元
   add_new_chars();
 });
