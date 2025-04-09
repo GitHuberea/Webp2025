@@ -13,8 +13,9 @@ xhr.onreadystatechange = function(){
 function addNewData (dataset) {
   var myTable = document.getElementById("csie");
   dataset.forEach(function(data, index) {
-    var row myTable. insertRow(-1);
+    var row = myTable. insertRow(-1);
     row.insertCell(0).innerHTML = data['title'];
     row.insertCell(1).innerHTML = data['showInfo'] [0] ['location'];
     row.insertCell(2).innerHTML = data['showInfo'] [0] ['price'];
  });
+}
