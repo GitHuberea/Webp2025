@@ -1,7 +1,7 @@
 var container = document.getElementById('container');
 let wrongCount = 0; // 連續錯誤次數
 
-window.onload = function () {//隨機產生 0 到 2 個字元
+window.onload = function () {//隨機產生0到2個字元
   const initialChars = getRandomChars(0, 2);
   container.textContent = initialChars;
 };
@@ -14,10 +14,10 @@ window.addEventListener("keyup", function (e) {
     container.textContent = "";// 清空字串
     wrongCount = 0; 
   } else if (e.key === 'Backspace') {
-    container.textContent = currentText.substring(0, currentText.length - 1);// 刪除最後一個字元
+    container.textContent = currentText.substring(0, currentText.length - 1);// 刪除最後1個字元
     wrongCount = 0;
   } else if (currentText.length > 0 && e.key === currentText[0]) {
-    container.textContent = currentText.slice(1); // 檢查輸入字元與第一個字元相同，刪除第一個字元
+    container.textContent = currentText.slice(1); // 檢查輸入字元與第一個字元相同，刪除第1個字元
     wrongCount = 0;
   } else if (/^[a-zA-Z]$/.test(e.key)) {
     wrongCount++; // 累加錯誤次數
@@ -26,7 +26,7 @@ window.addEventListener("keyup", function (e) {
   // 每次操作後隨機新增字元
   add_new_chars();
    
-   if (wrongCount >= 3) {// 如果連續打錯三次，額外再增加 6 個亂數字元
+   if (wrongCount >= 3) {// 連續打錯三次，再增加6個亂數字元
     const extraChars = getRandomChars(6, 6);
     container.textContent += extraChars;
     wrongCount = 0; // 重設錯誤次數
@@ -34,7 +34,7 @@ window.addEventListener("keyup", function (e) {
 });
 
 function add_new_chars() {
-  const newChars = getRandomChars(1, 3); // 隨機增加1到 3 個字元
+  const newChars = getRandomChars(1, 3); // 隨機增加1到3個字元
   container.textContent += newChars;
 }
 
