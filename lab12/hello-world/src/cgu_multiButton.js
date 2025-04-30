@@ -10,8 +10,10 @@ const changeText=(event)=>{
     
 const MultiButton=(num)=>{
     var output=[];
-    for(let i=1;i<num+1;++i)
-        output.push(<Button onClick={changeText}>第{i}個按鍵</Button>)
+    for(let i=1;i<num+1;++i) {
+        output.push(<Button variant="contained" color="primary"
+        onClick={changeText}>第{i}個按鍵</Button>)
+    }
     return output;
 }
 
